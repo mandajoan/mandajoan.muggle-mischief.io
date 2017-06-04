@@ -1,0 +1,147 @@
+/*font-family: 'Reenie Beanie', cursive;
+font-family: 'Give You Glory', cursive;*/
+
+body {
+  background-color: white;
+}
+
+#header {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-left: 170px;
+}
+
+#instructions {
+  margin: 5px 25px 150px 25px;
+}
+
+#instructionsP {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 35px;
+  text-align: center;
+
+}
+
+#snitchBoard {
+  width: auto;
+  height: 550px;
+  border: 3px solid black;
+  background-image: url("./images/keyBoardBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin: 0 10px 150px 10px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+
+
+
+h1 {
+  font-family: 'Give You Glory', cursive;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#challenge1P {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 40px;
+
+}
+
+.startButton {
+  background-color: #990000;
+  border: none;
+  color: white;
+  font-size: 30px;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+#challenge2P {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 40px;
+}
+
+
+#wizardTttBoard {
+  width: auto;
+  height: 550px;
+  border: 3px solid black;
+  background-image: url("./images/commonRoom.png");
+  opacity: .7;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin: 0 10px 150px 10px;
+  box-shadow: 5px 5px 5px grey;
+}
+.resetButton {
+  background-color: #990000;
+  border: none;
+  color: white;
+  font-size: 30px;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+#challenge3P {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 40px;
+}
+
+
+#riddleBoard {
+  width: auto;
+  height: 530px;
+  border: 3px solid black;
+  background-image: url("./images/potionsClass.png");
+  opacity: .8;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin: 0 10px 50px 10px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+#footer {
+  font-family: 'Give You Glory', cursive;
+  color:black;
+  font-size: 25px;
+}
+
+
+#footerL {
+  float: left;
+  margin-left:50px;
+}
+
+#footerR {
+  float:right;
+  margin-right: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #990000;
+}
+
+#endLogo {
+  margin-left: 465px;
+  margin-right: 210px;
+}
+
+#mischiefEndLogo {
+  width: 325px;
+  height:125px;
+}
