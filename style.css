@@ -1,26 +1,74 @@
-/*font-family: 'Reenie Beanie', cursive;
+/*font-family: 'Amatic SC', cursive;
 font-family: 'Give You Glory', cursive;*/
 
 body {
   background-color: white;
+
 }
 
 #header {
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  margin-left: 170px;
+background-position: auto;
+background-repeat: no-repeat;
+background-size: auto;
+text-align: center;
+margin-left: 10px;
 }
+
+
 
 #instructions {
   margin: 5px 25px 150px 25px;
 }
 
 #instructionsP {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: 35px;
   text-align: center;
+  font-weight: bold;
+
+}
+
+.timeBoxes {
+display: inline-table;
+font-family: 'Give You Glory', cursive;
+font-size: 15px;
+text-align: center;
+
+
+}
+
+#timer {
+  width: 80px;
+  height: 60px;
+  border: 3px solid black;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  box-shadow: 5px 5px 5px grey;
+
+}
+#player1Time {
+width: 80px;
+height: 60px;
+border: 3px solid black;
+margin-bottom: 15px;
+margin-left: 30px;
+box-shadow: 5px 5px 5px grey;
+}
+
+/*#harryPotter {
+  width: 100px;
+  clear:both;*/
+
+
+
+#player2Time {
+  width: 80px;
+  height: 60px;
+  border: 3px solid black;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  box-shadow: 5px 5px 5px grey;
+
 
 }
 
@@ -34,38 +82,54 @@ body {
   background-size: auto;
   margin: 0 10px 150px 10px;
   box-shadow: 5px 5px 5px grey;
+
+
 }
 
+#snitch {
+  position: relative;
+  width: 100px;
+}
+
+#snitchStart {
+  background-color: #990000;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  padding: 0 0 0 0;
+  text-align: center;
+}
 
 
 
 h1 {
   font-family: 'Give You Glory', cursive;
   font-weight: bold;
-  margin-left: 20px;
+  font-size: 40px;
+  margin-left: 10px;
+  text-shadow: 2px 2px 5px #e6ac00;
+  text-align: center;
 }
 
 #challenge1P {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: 30px;
-  text-align: left;
-  margin-left: 40px;
+  text-align: center;
+  margin-left: 30px;
+  font-weight: bold;
 
 }
 
-.startButton {
-  background-color: #990000;
-  border: none;
-  color: white;
-  font-size: 30px;
-  font-family: 'Reenie Beanie', cursive;
-}
+
 
 #challenge2P {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: 30px;
-  text-align: left;
-  margin-left: 40px;
+  text-align: center;
+  margin-left: 30px;
+  font-weight: bold;
+
 }
 
 
@@ -75,25 +139,50 @@ h1 {
   border: 3px solid black;
   background-image: url("./images/commonRoom.png");
   opacity: .7;
-  background-position: center;
+  background-position:center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   margin: 0 10px 150px 10px;
   box-shadow: 5px 5px 5px grey;
 }
-.resetButton {
+
+.trolls {
+  width: inherit;
+  margin-bottom: 20px;
+}
+
+#board {
+       width: 496px;
+       height: 496px;
+       border: 4px solid black;
+       margin: 25px 435px 0;
+     }
+
+#board div {
+       width: 120px;
+       height: 120px;
+       border: 2px solid black;
+       float: left;
+       text-align:center;
+       font-size: 100px;
+       line-height: 200px;
+     }
+
+
+#resetButtonTtt {
   background-color: #990000;
   border: none;
   color: white;
   font-size: 30px;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Amatic SC', cursive;
 }
 
 #challenge3P {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: 30px;
-  text-align: left;
-  margin-left: 40px;
+  text-align: center;
+  margin-left: 30px;
+  font-weight: bold;
 }
 
 
@@ -101,15 +190,22 @@ h1 {
   width: auto;
   height: 530px;
   border: 3px solid black;
-  background-image: url("./images/potionsClass.png");
-  opacity: .8;
+  background-image: url("./images/ravenclawTower.png");
+  opacity: .9;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   margin: 0 10px 50px 10px;
   box-shadow: 5px 5px 5px grey;
 }
+#buttonRiddle {
+  background-color: #990000;
+  border: none;
+  color: white;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
 
+}
 #footer {
   font-family: 'Give You Glory', cursive;
   color:black;
@@ -138,10 +234,11 @@ a:hover {
 
 #endLogo {
   margin-left: 465px;
-  margin-right: 210px;
+  margin-right: 210px
 }
 
 #mischiefEndLogo {
   width: 325px;
   height:125px;
+  margin-left: 75px;
 }

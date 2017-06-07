@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Give+You+Glory|Reenie+Beanie" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Give+You+Glory" rel="stylesheet">
     <title>Muggle Mischief</title>
   </head>
   <body>
@@ -29,40 +29,72 @@ Cheeky insults & cheating encouraged.
 </div>
 
 <div id="challenge1">
-<h1> &#x2728; Find the Golden Snitch</h1>
-  <p id="challenge1P"> Upon clicking the start button the snitch will disappear. You have to locate <br>
-    it as fast as you can by using your mouse to scan the quidditch field. Best time wins a point.<br>
+  <h1> &#x2728; Find the Golden Snitch</h1>
+    <p id="challenge1P"> This is a challenge to test your seeker abilities, or lack there of...<br>
+    Player One, click start to begin the timer and then click the snitch to make it take flight.<br>
+    You have to locate it as fast as you can by using your mouse to scan the quidditch field. <br>
+    When you locate the snitch with your mouse, it will appear. <br>
+    Player 2, when it is your turn just click the snitch and it will disappear and the timer will start over. <br>
     <br>
-    Player One begins the game by clicking <button class="startButton">Start</button> </p>
-
-<div id="snitchBoard">
-</div>
-
+    Best time scores a point.
+    <br>
+   </p>
+  <div>
+          <div class= "timeBoxes" id = "timer"> <span id="s">0</span> s<br />
+          <button id="snitchStart">Start</button>
+          </div>
+      <div class= "timeBoxes" id="player1Time"> Player 1 Time</div>
+      <div class= "timeBoxes" id= "player2Time"> Player 2 Time</div>
+      <!-- <div class="timeBoxes"><img src="./images/harryPotter.png" id="harryPotter"></div> -->
+  </div>
+  <div id="snitchBoard">
+    <img id="snitch" alt="Golden Snitch" src="./images/goldenSnitch.png">
+  </div>
 </div>
 <br>
 <div id="challenge2">
   <h1> &#x2728; Wizard's Tic-Tac-Troll</h1>
     <p id="challenge2P"> You may be familiar with this wizard game as the muggles adopted it from us<br>
       many years past. But don't be mistaken, Tic-Tac-Troll predates any muggle version. Rules are quite simple:<br>
-      You will play against each other. First to match three trolls in a row wins a point.<br>
+      You will play against each other. First to match three trolls in a row scores a point.<br>
       <br>
-      Player One begins by selecting a square. In event of a tie, click the <button class="resetButton">Reset</button> and play again. </p>
+      Player One begins by selecting a square. In event of a tie, click the <button id="resetButtonTtt">Reset</button> and play again. </p>
     <div id="wizardTttBoard">
+      <div id="board">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+      </div>
+
     </div>
   </div>
 
  <div id="challenge3">
-   <h1> &#x2728; Potion's Puzzle</h1>
-   <p id="challenge3P"> Snape's foul reputation likely stretches even into the muggle world, so you <br>
-    very well may already know that failing this challenge leads to horrid consequences.<br>
-    Placed in front of you are three potions bottles. One of which is the key to passing this level and<br>
-    selecting this bottle will earn you a point. The other two will kill you instantly, causing<br>
-    to lose two points from your score, assuming you have at least two points to lose.<br>
-    May the most cunning mind win. . .<br>
+   <h1> &#x2728; Ravenclaw's Riddle</h1>
+   <p id="challenge3P"> Unlike the other houses at Hogwarts, Ravenclaw's dormitory requires no password.<br>
+     Instead, those who wish to enter must answer a riddle.<br> [Not sure how this prevents
+     any intruders from entering, but that is clearly not my problem]<br>
+     Your task here is simple, each player will have a turn to solve the same riddle.<br>
+     Answering correctly will earn you a point. Answering incorrectly will deduct a point from your score. <br>
+     May the sharpest mind win...
+     <br>
     <br>
-    Player One begins the game. Player Two, go stare at a wall until Player One finishes.<br>
+    Player One begins the game by clicking start. Player Two, go stare at a wall until Player One finishes.<br>
     <br>
-    <button class="startButton">Start</button> <button class="resetButton">Reset</button>
+    <button id="buttonRiddle">Start</button>
   </p>
     <br>
     <div id="riddleBoard">
@@ -77,5 +109,8 @@ Cheeky insults & cheating encouraged.
       <p id="footerR"><a href="https://challenge-reality.com/" target="_blank"><span>&#x2728;</span> challenge-reality.com</a></p>
       <div>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>
