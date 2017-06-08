@@ -198,14 +198,27 @@ h1 {
   margin: 0 10px 50px 10px;
   box-shadow: 5px 5px 5px grey;
 }
-#buttonRiddle {
+.riddleButtons {
   background-color: #990000;
   border: none;
   color: white;
   font-size: 30px;
   font-family: 'Amatic SC', cursive;
-
 }
+
+#riddle {
+  font-family: 'Give You Glory', cursive;
+  color: white;
+  font-size:50px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 140px;
+  background-color: black;
+  opacity: .5;
+  display:none;
+}
+
+
 #footer {
   font-family: 'Give You Glory', cursive;
   color:black;

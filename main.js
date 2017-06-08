@@ -15,15 +15,15 @@ var player2 = {
 }
 
 
-var currentPlayer = player1
+var currentPlayer = player1;
 
 function switchTurns() {
-     if(currentPlayer == player1) {
-       currentPlayer = player2
-     } else {
-       currentPlayer = player1
-     }
+   if(currentPlayer == player1) {
+     currentPlayer = player2;
+   } else {
+     currentPlayer = player1;
    }
+  }
 
 
 // GOLDEN SNITCH LOGIC
@@ -34,16 +34,16 @@ var self = this;
 
 
 //timer
-var seconds = 0
-var timer
+var seconds = 0;
+var timer;
 
 
 
 function startTimer (){
   timer = setInterval(function(){
-    seconds++
-    $('#s').text(seconds)
-    console.log(seconds)
+    seconds++;
+    $('#s').text(seconds);
+    console.log(seconds);
   }, 1000)
 }
 
@@ -52,23 +52,28 @@ function startTimer (){
   var p2t = $('#player2Time');
 
   function checkScore() {
-    if (p1t.text() < p2t.text()){
-      player1.score = player1.score +1
+    p1t = parseInt(p1t.text());
+    p2t = parseInt(p2t.text());
+    if (p1t < p2t){
+      player1.score = player1.score +1;
       setTimeout (function(){
+        console.log(currentPlayer, player1.score, player2.score)
         alert("Player 1 wins the first challenge and earns a point! \n Proceed to the next challenge!");
       }, 2000);
-      console.log(player1[1]);
-    } else if (p1t.text() > p2t.text()){
-    player2.score = player2.score +1
+      console.log(player1.score);
+    } else if (p1t > p2t){
+    player2.score = player2.score +1;
     setTimeout (function(){
+      console.log(currentPlayer, player1.score, player2.score)
       alert("Player 2 wins the first challenge and earns a point! \n Proceed to the next challenge!");
     }, 2000);
     console.log(player2.score);
-  } else if (p1t.text() == p2t.text()){
+  } else if (p1t == p2t) {
+    console.log(currentPlayer, player1.score, player2.score)
     alert ("Tie. Try again, mischievious muggles!")
     //reset time, start button and snitch position
     setTimeout (function (){
-      resetBoard()
+      resetBoard();
     }, 2000);
     console.log('tie reset');
   };
@@ -76,15 +81,15 @@ function startTimer (){
 
 function stopTimer (){
   if(currentPlayer == player1) {
-    player1.time = seconds
+    player1.time = seconds;
     $('#player1Time').text(seconds);
-    switchTurns()
+    switchTurns();
   } else {
     player2.time = seconds
     $('#player2Time').text(seconds);
-    checkScore()
-    switchTurns()
-  };
+    checkScore();
+    switchTurns();
+  }
   //return seconds = 0;
   clearInterval(timer);
   seconds=0;
@@ -103,17 +108,17 @@ function moveby10(){
   snitch.style.left = howManyPx + 'px';
 }
 
-function showSnitch (){
-  stopTimer ()
+function showSnitch(){
+  stopTimer();
   snitch.style.opacity = 1;
   snitch.removeEventListener('mouseenter', showSnitch);
 }
 
-function hideSnitch (){
+function hideSnitch(){
   snitch.style.opacity = 0;
 }
 
-function moveSnitchRandom (){
+function moveSnitchRandom(){
    console.log(this);
    howManyPxTop = (Math.random() * 200);
    howManyPxLeft = (Math.random() * 800);
@@ -123,8 +128,8 @@ function moveSnitchRandom (){
    snitch.addEventListener('mouseenter', showSnitch);
 }
 
-function startSnitchGame (){
-  setTimeout (function (){
+function startSnitchGame(){
+  setTimeout (function(){
     startTimer()}, 500);
     snitch.addEventListener('click', moveSnitchRandom);
 }
@@ -210,31 +215,32 @@ function checkWinnerTtt (){
 
   if(matchedFirstRow || matchedSecondRow || matchedThirdRow || matchedFourthRow || matchedFirstColumn || matchedSecondColumn || matchedThirdColumn ||
     matchedFourthcolumn || matchedFirstDiagonal || matchedSecondDiagonal) {
-
-      console.log("match")
-      alert(currentPlayer.name + " " + "wins! \n Proceed to next challenge! Player One goes first.")
-      return true
+      currentPlayer.score = currentPlayer.score +1;
+      console.log("currentPlayer");
+      alert(currentPlayer.name + " " + "wins! \n Proceed to next challenge! Player One goes first.");
+      switchTurns()
+      return true;
     } else {
-      return false
+      return false;
     }
+  }
 
-}
 //prevent clicks (working)
 function lockBoard() {
         for(var i = 0; i < boxes.length; i += 1) {
-          boxes[i].removeEventListener('click', boxClickHandler)
+          boxes[i].removeEventListener('click', boxClickHandler);
         }
       }
-
-function addScore (){
-  if (checkWinnerTtt == true){
-    currentPlayer.score = currentPlayer.score+ 1
-    console.log("winning pattern")
-  } else {
-  alert ("You mucked it up, muggles! Tie game. Press reset!");
-  console.log("tie")
-  }
-}
+//
+// function addScore (){
+//   if (checkWinnerTtt == true){
+//     currentPlayer.score = currentPlayer.score+ 1
+//     console.log("winning pattern")
+//   } else {
+//   alert ("You mucked it up, muggles! Tie game. Press reset!");
+//   console.log("tie")
+//   }
+// }
 
 
 // deactivate box once clicked
@@ -248,7 +254,76 @@ function addScore (){
 // score added to winner
 
 
-//Potions Puzzle
+// //Potions Puzzle
+var riddleStartButton = $('#startRiddle');
+var riddleResetButton = $('#resetRiddle');
+var riddleBoard = $('#riddleBoard');
+var originalRiddleBoard = $("#riddleBoard").clone();
+
+
+
+function startRiddle(){
+  setTimeout (function(){
+    $('#riddle').show()
+  }, 1000);
+}
+
+function resetRiddleBoard(){
+    $("#riddleBoard").replaceWith(originalRiddleBoard.clone());
+    currentPlayer = player2;
+  }
+
+
+
+riddleStartButton.click(startRiddle);
+
+riddleResetButton.click(resetRiddleBoard);
+
+var p1RiddleScore = 0;
+var p2RiddleScore = 0;
+
+
+function riddleFunc (){
+  var txt;
+  var riddleAnswer = prompt("Your answer, please...");
+    if (riddleAnswer.toLowerCase() == "fire"){
+      txt = currentPlayer.name + " "+ ", well done. Correct answer and you have earned a point!";
+      if(currentPlayer == player1){
+      p1RiddleScore +=1;
+      } else if(currentPlayer == player2){
+      p2RiddleScore +=1;
+      }
+      currentPlayer.score = currentPlayer.score + 1
+      console.log(currentPlayer.score);
+    } else {
+      txt = " You mucked it up muggle!"+ " " + currentPlayer.name + " " + ", a point will be taken from your score.";
+      if(currentPlayer == player1){
+            p1RiddleScore +=1;
+      } else if(currentPlayer == player2){
+            p2RiddleScore +=1;
+      }
+      currentPlayer.score = currentPlayer.score -1
+      console.log(currentPlayer.score);
+    }
+    document.getElementById("riddle").innerText = txt;
+    winnerOrTie();
+    console.log("check working func");
+}
+
+function winnerOrTie(){
+  if (p1RiddleScore && p2RiddleScore && player1.score > player2.score){
+        alert("Player 1 you are the winning muggle! with a score of" + " " + player1.score + "\n Player 2, you lose with a score of" + " " + player2.score);
+      } else if (p1RiddleScore && p2RiddleScore && player1.score < player2.score){
+        alert("Player 2 you are the winning muggle! with a score of" + " "+ player2.score + "\n Player 1, you lose with a score of" + " "+ player1.score);
+      } else if (p1RiddleScore && p2RiddleScore  && player1.score == player2.score){
+        var sD = confirm("You meddlesome muggles tied the game! Well, I thought ahead... \n time for the SUDDEN DEATH challenge! Click 'ok' to begin.");
+        if (sD) {
+          window.location.href = "suddenDeath.html";
+        }
+      }
+    }
+
+
 
 // set up turn for each player
 // score 1 pt if win

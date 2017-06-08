@@ -16,7 +16,7 @@
 <p id="instructionsP">This is a game built for mischievous muggles who dream of playing in the wizard world.
   Go ahead and grab a friend, as this is a two muggle game. There are three challenges & the winner is the muggle
   who gets the best out of three. The first & last challenges are scored by best time & are played individually.
-  The players compete against each other in the second, & the winner is the first to match three in a row.
+  The players compete against each other in the second, <br> & the winner is the first to match four in a row.
   <br>
   <br>
 Alright, you filthy muggles, enjoy the game & get up to some mischief.
@@ -56,7 +56,7 @@ Cheeky insults & cheating encouraged.
   <h1> &#x2728; Wizard's Tic-Tac-Troll</h1>
     <p id="challenge2P"> You may be familiar with this wizard game as the muggles adopted it from us<br>
       many years past. But don't be mistaken, Tic-Tac-Troll predates any muggle version. Rules are quite simple:<br>
-      You will play against each other. First to match three trolls in a row scores a point.<br>
+      You will play against each other. First to match four trolls in a row scores a point.<br>
       <br>
       Player One begins by selecting a square. In event of a tie, click the <button id="resetButtonTtt">Reset</button> and play again. </p>
     <div id="wizardTttBoard">
@@ -94,12 +94,17 @@ Cheeky insults & cheating encouraged.
     <br>
     Player One begins the game by clicking start. Player Two, go stare at a wall until Player One finishes.<br>
     <br>
-    <button id="buttonRiddle">Start</button>
+<button class="riddleButtons" id="startRiddle">Start</button> <button class="riddleButtons" id="resetRiddle">Reset</button>
   </p>
     <br>
     <div id="riddleBoard">
-    </div>
+      <p id="riddle"> Feed me and I live. Give me a drink and I die. <br>
+        What am I?<br>
+        <button class="riddleButtons" onclick="riddleFunc()">Click to answer</button>
+      </p>
 
+    </div>
+<br>
     <div id="endLogo">
       <img src="./images/endLogo.png" id="mischiefEndLogo">
     </div>

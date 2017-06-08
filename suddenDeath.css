@@ -1,0 +1,89 @@
+
+
+h1 {
+  font-family: 'Give You Glory', cursive;
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 10px;
+  text-shadow: 2px 2px 5px #e6ac00;
+  text-align: center;
+}
+
+h2{
+  font-family: 'Amatic SC', cursive;
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+p{
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#partOne {
+  margin-bottom: 50px;
+}
+
+#suddenDeathImage {
+  border: 5px solid black;
+  margin-left: 375px;
+  box-shadow: 5px 5px 5px grey;
+  display:none;
+
+
+
+}
+
+#sDImageD {
+margin-left: 384px;
+}
+
+.sDButtons {
+  background-color: #990000;
+  border: none;
+  color: white;
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  box-shadow: 5px 5px 5px grey;
+}
+
+#player1SD {
+  float:left;
+  margin-left: 20px;
+}
+
+#player2SD {
+  float:right;
+  margin-right: 20px;
+}
+
+#footer {
+  font-family: 'Give You Glory', cursive;
+  color:black;
+  font-size: 25px;
+  margin-top: 200px;
+}
+
+
+#footerL {
+  float: left;
+  margin-left:10px;
+}
+
+#footerR {
+  float:right;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #990000;
+}
