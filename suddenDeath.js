@@ -71,7 +71,6 @@ function player1Answer(){
   if (suddenDeathAnswer.toLowerCase() =="luna lovegood"){
     alert("Player 1 wins the game!");
   } else if (player2.clicked == 0 && suddenDeathAnswer.toLowerCase !== "luna lovegood"){
-    removeClick1();
     alert("Wrong answer, Player 1.\n Player 2, you get one shot to win!");
   } else if (player1.clicked > 0 && player2.clicked > 0 && suddenDeathAnswer.toLowerCase !== "luna lovegood"){
     alert("You have tied again, you hot mess of muggles! \n It looks like this game will end in a tie! You are a well matched pair of muggles! ");
@@ -86,7 +85,6 @@ function player2Answer(){
   if (suddenDeathAnswer.toLowerCase() =="luna lovegood"){
     alert("Player 2 wins the game!");
   } else if (player1.clicked == 0 && suddenDeathAnswer.toLowerCase !== "luna lovegood"){
-    removeClick2();
     alert("Wrong answer, Player 2.\n Player 1, you get one shot to win!");
   } else if (player1.clicked > 0 && player2.clicked > 0 && suddenDeathAnswer.toLowerCase !== "luna lovegood"){
     alert("You have tied again, you hot mess of muggles! \n It looks like this game will end in a tie! You are a well matched pair of muggles! ");
