@@ -18,7 +18,7 @@ h2{
 
 p{
   font-family: 'Amatic SC', cursive;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   font-weight: bold;
 }
@@ -32,13 +32,11 @@ p{
   margin-left: 375px;
   box-shadow: 5px 5px 5px grey;
   display:none;
-
-
-
 }
 
+
 #sDImageD {
-margin-left: 384px;
+  margin-left: 384px;
 }
 
 .sDButtons {
@@ -61,22 +59,11 @@ margin-left: 384px;
   margin-right: 20px;
 }
 
-#footer {
+#footer p{
   font-family: 'Give You Glory', cursive;
   color:black;
   font-size: 25px;
   margin-top: 200px;
-}
-
-
-#footerL {
-  float: left;
-  margin-left:10px;
-}
-
-#footerR {
-  float:right;
-  margin-right: 10px;
 }
 
 a {

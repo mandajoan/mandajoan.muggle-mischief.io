@@ -4,62 +4,65 @@
     <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Give+You+Glory" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <title>Muggle Mischief</title>
   </head>
   <body>
+  <div id="header">
+    <img class="animated bounceInDown" src="./images/newLogoGold.png">
+  </div>
 
-<div id="header">
-  <img src="./images/muggleMischiefLogo.png">
+  <div id="instructions">
+  <p id="instructionsP">This is a game built for mischievous muggles who dream of playing in the wizard world.
+    Go ahead and grab a friend, as this is a two muggle game. There are three challenges & the winner is the muggle
+    who gets the best out of three. The first & last challenges are scored by best time & are played individually.
+    The players compete against each other in the second, <br> & the winner is the first to match four in a row.
+    <br>
+    <br>
+    Alright, you filthy muggles, enjoy the game & get up to some mischief.
+    <br>
+    Cheeky insults & cheating encouraged.
+    <br>
+    <br>
+    &#9889; &#x26AF; &#x2728;
+  </p>
 </div>
 
-<div id="instructions">
-<p id="instructionsP">This is a game built for mischievous muggles who dream of playing in the wizard world.
-  Go ahead and grab a friend, as this is a two muggle game. There are three challenges & the winner is the muggle
-  who gets the best out of three. The first & last challenges are scored by best time & are played individually.
-  The players compete against each other in the second, <br> & the winner is the first to match four in a row.
-  <br>
-  <br>
-Alright, you filthy muggles, enjoy the game & get up to some mischief.
 <br>
-Cheeky insults & cheating encouraged.
-<br>
-<br>
-&#9889; &#x26AF; &#x2728;
-</p>
-</div>
-
 <div id="challenge1">
   <h1> &#x2728; Find the Golden Snitch</h1>
     <p id="challenge1P"> This is a challenge to test your seeker abilities, or lack there of...<br>
     Player One, click start to begin the timer and then click the snitch to make it take flight.<br>
     You have to locate it as fast as you can by using your mouse to scan the quidditch field. <br>
     When you locate the snitch with your mouse, it will appear. <br>
-    Player 2, when it is your turn just click the snitch and it will disappear and the timer will start over. <br>
+    Player 2, when it is your turn just click in the area of the snitch and it will disappear and the timer will start over. <br>
     <br>
     Best time scores a point.
     <br>
    </p>
-  <div>
-          <div class= "timeBoxes" id = "timer"> <span id="s">0</span> s<br />
-          <button id="snitchStart">Start</button>
-          </div>
-      <div class= "timeBoxes" id="player1Time"> Player 1 Time</div>
-      <div class= "timeBoxes" id= "player2Time"> Player 2 Time</div>
-      <!-- <div class="timeBoxes"><img src="./images/harryPotter.png" id="harryPotter"></div> -->
-  </div>
-  <div id="snitchBoard">
-    <img id="snitch" alt="Golden Snitch" src="./images/goldenSnitch.png">
-  </div>
+<div>
+    <div class= "timeBoxes" id = "timer"> <span id="s">0</span> s<br />
+        <button id="snitchStart">Start</button>
+    </div>
+    <div class= "timeBoxes" id="player1Time"> Player 1 Time</div>
+    <div class= "timeBoxes" id= "player2Time"> Player 2 Time</div>
 </div>
-<br>
+
+<div id="snitchBoard">
+    <img id="snitch" alt="Golden Snitch" src="./images/goldenSnitchTransparent.gif">
+</div>
+</div>
+
+  <br>
+
 <div id="challenge2">
   <h1> &#x2728; Wizard's Tic-Tac-Troll</h1>
-    <p id="challenge2P"> You may be familiar with this wizard game as the muggles adopted it from us<br>
+    <p id="challenge2P"> You may be familiar with this wizard game as the muggles adopted it<br>
       many years past. But don't be mistaken, Tic-Tac-Troll predates any muggle version. Rules are quite simple:<br>
       You will play against each other. First to match four trolls in a row scores a point.<br>
       <br>
       Player One begins by selecting a square. In event of a tie, click the <button id="resetButtonTtt">Reset</button> and play again. </p>
-    <div id="wizardTttBoard">
+  <div id="wizardTttBoard">
       <div id="board">
             <div></div>
             <div></div>
@@ -78,44 +81,65 @@ Cheeky insults & cheating encouraged.
             <div></div>
             <div></div>
       </div>
-
-    </div>
+      <div id="board2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+      </div>
   </div>
+</div>
 
- <div id="challenge3">
+<div id="challenge3">
    <h1> &#x2728; Ravenclaw's Riddle</h1>
-   <p id="challenge3P"> Unlike the other houses at Hogwarts, Ravenclaw's dormitory requires no password.<br>
+     <p id="challenge3P"> Unlike the other houses at Hogwarts, Ravenclaw's dormitory requires no password.<br>
      Instead, those who wish to enter must answer a riddle.<br> [Not sure how this prevents
      any intruders from entering, but that is clearly not my problem]<br>
      Your task here is simple, each player will have a turn to solve the same riddle.<br>
      Answering correctly will earn you a point. Answering incorrectly will deduct a point from your score. <br>
      May the sharpest mind win...
      <br>
-    <br>
+     <br>
     Player One begins the game by clicking start. Player Two, go stare at a wall until Player One finishes.<br>
     <br>
-<button class="riddleButtons" id="startRiddle">Start</button> <button class="riddleButtons" id="resetRiddle">Reset</button>
-  </p>
+      <button class="riddleButtons" id="startRiddle">Start</button> <button class="riddleButtons" id="resetRiddle">Reset</button>
+    </p>
+
     <br>
+
     <div id="riddleBoard">
-      <p id="riddle"> Feed me and I live. Give me a drink and I die. <br>
+      <p class="animated flipInY" id="riddle"> Feed me and I live. Give me a drink and I die. <br>
         What am I?<br>
         <button class="riddleButtons" onclick="riddleFunc()">Click to answer</button>
       </p>
-
     </div>
-<br>
-    <div id="endLogo">
+
+    <br>
+
+<div id="endLogo">
       <img src="./images/endLogo.png" id="mischiefEndLogo">
-    </div>
+</div>
 
-    <div id="footer">
+<div id="footer">
       <p id="footerL">Built by Amanda Joan &#9889;</p>
       <p id="footerR"><a href="https://challenge-reality.com/" target="_blank"><span>&#x2728;</span> challenge-reality.com</a></p>
-      <div>
+</div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+
   </body>
 </html>

@@ -7,11 +7,13 @@ body {
 }
 
 #header {
-background-position: auto;
-background-repeat: no-repeat;
-background-size: auto;
-text-align: center;
-margin-left: 10px;
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: auto;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 
@@ -25,16 +27,13 @@ margin-left: 10px;
   font-size: 35px;
   text-align: center;
   font-weight: bold;
-
 }
 
 .timeBoxes {
-display: inline-table;
-font-family: 'Give You Glory', cursive;
-font-size: 15px;
-text-align: center;
-
-
+  display: inline-table;
+  font-family: 'Give You Glory', cursive;
+  font-size: 15px;
+  text-align: center;
 }
 
 #timer {
@@ -44,22 +43,16 @@ text-align: center;
   margin-bottom: 15px;
   margin-left: 30px;
   box-shadow: 5px 5px 5px grey;
-
 }
+
 #player1Time {
-width: 80px;
-height: 60px;
-border: 3px solid black;
-margin-bottom: 15px;
-margin-left: 30px;
-box-shadow: 5px 5px 5px grey;
+  width: 80px;
+  height: 60px;
+  border: 3px solid black;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  box-shadow: 5px 5px 5px grey;
 }
-
-/*#harryPotter {
-  width: 100px;
-  clear:both;*/
-
-
 
 #player2Time {
   width: 80px;
@@ -68,8 +61,6 @@ box-shadow: 5px 5px 5px grey;
   margin-bottom: 15px;
   margin-left: 30px;
   box-shadow: 5px 5px 5px grey;
-
-
 }
 
 #snitchBoard {
@@ -82,13 +73,12 @@ box-shadow: 5px 5px 5px grey;
   background-size: auto;
   margin: 0 10px 150px 10px;
   box-shadow: 5px 5px 5px grey;
-
-
+  cursor: url("./images/harryPotter.png"), default;
 }
 
 #snitch {
   position: relative;
-  width: 100px;
+  width: 250px;
 }
 
 #snitchStart {
@@ -107,7 +97,6 @@ h1 {
   font-family: 'Give You Glory', cursive;
   font-weight: bold;
   font-size: 40px;
-  margin-left: 10px;
   text-shadow: 2px 2px 5px #e6ac00;
   text-align: center;
 }
@@ -118,7 +107,6 @@ h1 {
   text-align: center;
   margin-left: 30px;
   font-weight: bold;
-
 }
 
 
@@ -129,21 +117,6 @@ h1 {
   text-align: center;
   margin-left: 30px;
   font-weight: bold;
-
-}
-
-
-#wizardTttBoard {
-  width: auto;
-  height: 550px;
-  border: 3px solid black;
-  background-image: url("./images/commonRoom.png");
-  opacity: .7;
-  background-position:center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 10px 150px 10px;
-  box-shadow: 5px 5px 5px grey;
 }
 
 .trolls {
@@ -152,22 +125,55 @@ h1 {
 }
 
 #board {
-       width: 496px;
-       height: 496px;
-       border: 4px solid black;
-       margin: 25px 435px 0;
-     }
+  width: 496px;
+  height: 496px;
+  border: 4px solid black;
+  margin: 25px 435px 0;
+  background-color: rgba(40,25,25, 0.6);
+}
 
 #board div {
-       width: 120px;
-       height: 120px;
-       border: 2px solid black;
-       float: left;
-       text-align:center;
-       font-size: 100px;
-       line-height: 200px;
-     }
+  width: 120px;
+  height: 120px;
+  border: 2px solid black;
+  float: left;
+  text-align:center;
+  font-size: 100px;
+  line-height: 200px;
+  z-index: 1;
+}
+#wizardTttBoard {
+  width: auto;
+  height: 550px;
+  border: 3px solid black;
+  background-image: url("./images/greatHall.png");
+  opacity: .7;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 10px 150px 10px;
+  box-shadow: 5px 5px 5px grey;
+}
 
+#board2 {
+  width: 496px;
+  height: 496px;
+  border: 4px solid black;
+  margin: 25px 435px 0;
+  background-color: rgba(255,255,0, 0.6);
+  z-index: -1;
+  display: none;
+}
+
+#board2 div {
+  width: 120px;
+  height: 120px;
+  border: 2px solid black;
+  float: left;
+  text-align:center;
+  font-size: 100px;
+  line-height: 200px;
+}
 
 #resetButtonTtt {
   background-color: #990000;
@@ -198,6 +204,7 @@ h1 {
   margin: 0 10px 50px 10px;
   box-shadow: 5px 5px 5px grey;
 }
+
 .riddleButtons {
   background-color: #990000;
   border: none;
@@ -214,7 +221,7 @@ h1 {
   text-align: center;
   margin-top: 140px;
   background-color: black;
-  opacity: .5;
+  opacity: .6;
   display:none;
 }
 

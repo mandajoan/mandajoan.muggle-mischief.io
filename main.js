@@ -1,8 +1,10 @@
 // SET UP TWO PLAYERS, current player,  AND SCORE SYSTEM
 
+//Variables for troll images
 var p1TrollImg = '<img src ="./images/p1troll.png" class="trolls">'
 var p2TrollImg = '<img src ="./images/p2troll.png" class="trolls">'
 
+//Objects for Players
 var player1 = {
   name: "Player One",
   score: 0,
@@ -14,15 +16,18 @@ var player2 = {
   image: p2TrollImg
 }
 
-
+//Setting up currentPlayer and switchTurns
 var currentPlayer = player1;
 
 function switchTurns() {
    if(currentPlayer == player1) {
      currentPlayer = player2;
+     return;
    } else {
      currentPlayer = player1;
+     return;
    }
+   return true;
   }
 
 
@@ -33,7 +38,7 @@ var button = document.querySelector('#snitchStart');
 var self = this;
 
 
-//timer
+//timer logic
 var seconds = 0;
 var timer;
 
@@ -47,7 +52,7 @@ function startTimer (){
   }, 1000)
 }
 
-
+//Score function using time logic
   var p1t = $('#player1Time');
   var p2t = $('#player2Time');
 
@@ -79,6 +84,7 @@ function startTimer (){
   };
 }
 
+//stop timer on mouseover logic
 function stopTimer (){
   if(currentPlayer == player1) {
     player1.time = seconds;
@@ -95,15 +101,15 @@ function stopTimer (){
   seconds=0;
   snitch.addEventListener('click', startTimer);
 }
-///if i have time figure out how to reset just the div not the whole page
+
 function resetBoard(){
 location.reload()
  }
 
 
-//snitch functions for movement
-function moveby10(){
-  howManyPx += 10;
+//snitch functions for movement logic
+function moveby15(){
+  howManyPx += 15;
   snitch.style.top = howManyPx + 'px';
   snitch.style.left = howManyPx + 'px';
 }
@@ -128,6 +134,7 @@ function moveSnitchRandom(){
    snitch.addEventListener('mouseenter', showSnitch);
 }
 
+//Start game logic with clicks
 function startSnitchGame(){
   setTimeout (function(){
     startTimer()}, 500);
@@ -136,63 +143,60 @@ function startSnitchGame(){
 
 button.addEventListener('click', startSnitchGame);
 
-// Two players, player 1 goes first
-// Set up timer for game
-// log time and store for each player
-// fastest time gets a point for that player
-//
-// function on click even
-// snitch disappears and moves to random location
-// timer starts
-//
-// on mouse over, snitch appears, timer stops
-// time saved
-//
-// game resets for next player
-// repeat game LOGIC
-// give fastest time point to that player
-// show through prompt
+
 ///////////////////////////////////////////////////////////////////////
 
 //Tic Tac Troll LOGIC
 
-// two players
-// assign troll images
-// current player
+//variables
 
 var boxes = document.querySelectorAll('#board div');
 var resetButtonT = document.querySelector('#resetButtonTtt');
-var originalState = $("#wizardTttBoard").clone();
+var boxes2 = document.querySelectorAll('#board2 div');
 
-//loop for event listener (working)
+
+//loops for event listener for each board
 for(var i = 0; i <boxes.length; i += 1){
-  boxes[i].addEventListener('click', boxClickHandler)
-
+  boxes[i].addEventListener('click', boxClickHandler);
 }
 
+for (var i=0; i<boxes2.length; i +=1){
+  boxes2[i].addEventListener('click', boxClickHandler);
+}
 
 ///Functions for game LOGIC
 
+//switch to board2 if game ends in tie
 function resetTtt () {
-    $("#wizardTttBoard").replaceWith(originalState.clone());
-    console.log('board reset');
-  }
+$('#board').hide();
+$('#board2').show();
+}
+//issue to fix in the future is that this only allows for two attempts and there is a posiblity that they tie twice
 
-resetButtonT.addEventListener('click', resetTtt)
+resetButtonT.addEventListener('click', resetTtt);
 
-//prevent box for being double clicked (working)
+//prevent box for being double clicked (works for both boards)
 function boxClickHandler (){
   if(!this.innerHTML){
-    this.innerHTML = currentPlayer.image
+    this.innerHTML = currentPlayer.image;
+    // switchTurns();
+
   }
   if(checkWinnerTtt ()) {
     lockBoard()
   }
-  switchTurns()
+  if(checkWinnerTtt2()) {
+    lockBoard2()
   }
 
-//check for win
+  switchTurns()
+
+  }
+
+//check for winning pattern logic for both boards
+
 function checkWinnerTtt (){
+
   var matchedFirstRow = boxes[0].innerHTML && boxes[0].innerHTML === boxes[1].innerHTML && boxes[0].innerHTML === boxes[2].innerHTML && boxes[0].innerHTML === boxes[3].innerHTML
 
   var matchedSecondRow = boxes[4].innerHTML && boxes[4].innerHTML === boxes[5].innerHTML && boxes[4].innerHTML === boxes[6].innerHTML && boxes[4].innerHTML === boxes[7].innerHTML
@@ -225,65 +229,88 @@ function checkWinnerTtt (){
     }
   }
 
-//prevent clicks (working)
+  function checkWinnerTtt2 (){
+
+    var matchedFirstRow = boxes2[0].innerHTML && boxes2[0].innerHTML === boxes2[1].innerHTML && boxes2[0].innerHTML === boxes2[2].innerHTML && boxes2[0].innerHTML === boxes2[3].innerHTML
+
+    var matchedSecondRow = boxes2[4].innerHTML && boxes2[4].innerHTML === boxes2[5].innerHTML && boxes2[4].innerHTML === boxes2[6].innerHTML && boxes2[4].innerHTML === boxes2[7].innerHTML
+
+    var matchedThirdRow = boxes2[8].innerHTML && boxes2[8].innerHTML === boxes2[9].innerHTML && boxes2[8].innerHTML === boxes2[10].innerHTML && boxes2[8].innerHTML === boxes2[11].innerHTML
+
+    var matchedFourthRow = boxes2[12].innerHTML && boxes2[12].innerHTML === boxes2[13].innerHTML && boxes2[12].innerHTML === boxes2[14].innerHTML && boxes2[12].innerHTML === boxes2[15].innerHTML
+
+    var matchedFirstColumn = boxes2[0].innerHTML && boxes2[0].innerHTML === boxes2[4].innerHTML && boxes2[0].innerHTML === boxes2[8].innerHTML && boxes2[0].innerHTML === boxes2[12].innerHTML
+
+    var matchedSecondColumn = boxes2[1].innerHTML && boxes2[1].innerHTML === boxes2[5].innerHTML && boxes2[1].innerHTML === boxes2[9].innerHTML && boxes2[1].innerHTML === boxes2[13].innerHTML
+
+    var matchedThirdColumn = boxes2[2].innerHTML && boxes2[2].innerHTML === boxes2[6].innerHTML && boxes2[2].innerHTML === boxes2[10].innerHTML && boxes2[2].innerHTML === boxes2[14].innerHTML
+
+    var matchedFourthcolumn = boxes2[3].innerHTML && boxes2[3].innerHTML === boxes2[7].innerHTML && boxes2[3].innerHTML === boxes2[11].innerHTML && boxes2[3].innerHTML === boxes2[15].innerHTML
+
+    var matchedFirstDiagonal = boxes2[0].innerHTML && boxes2[0].innerHTML === boxes2[5].innerHTML && boxes2[0].innerHTML === boxes2[10].innerHTML && boxes2[0].innerHTML === boxes2[15].innerHTML
+
+    var matchedSecondDiagonal = boxes2[3].innerHTML && boxes2[3].innerHTML === boxes2[6].innerHTML && boxes2[3].innerHTML === boxes2[9].innerHTML && boxes2[3].innerHTML === boxes2[12].innerHTML
+
+    if(matchedFirstRow || matchedSecondRow || matchedThirdRow || matchedFourthRow || matchedFirstColumn || matchedSecondColumn || matchedThirdColumn ||
+      matchedFourthcolumn || matchedFirstDiagonal || matchedSecondDiagonal) {
+        currentPlayer.score = currentPlayer.score +1;
+        console.log("currentPlayer");
+        alert(currentPlayer.name + " " + "wins! \n Proceed to next challenge! Player One goes first.");
+        switchTurns()
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+// prevent clicks once there is winning pattern (each board)
 function lockBoard() {
         for(var i = 0; i < boxes.length; i += 1) {
           boxes[i].removeEventListener('click', boxClickHandler);
         }
       }
-//
-// function addScore (){
-//   if (checkWinnerTtt == true){
-//     currentPlayer.score = currentPlayer.score+ 1
-//     console.log("winning pattern")
-//   } else {
-//   alert ("You mucked it up, muggles! Tie game. Press reset!");
-//   console.log("tie")
-//   }
-// }
 
+function lockBoard2() {
+        for(var i = 0; i < boxes2.length; i += 1) {
+            boxes2[i].removeEventListener('click', boxClickHandler);
+          }
+        }
 
-// deactivate box once clicked
-// set innerhtml to troll images
-//
-// check for winner each time
-// propt if there is a winner
-// if not then continue game
-// or reset board if no moves left
-//
-// score added to winner
+// //Ravenclaw's Tower Logic
 
-
-// //Potions Puzzle
+//variables for logic
 var riddleStartButton = $('#startRiddle');
 var riddleResetButton = $('#resetRiddle');
 var riddleBoard = $('#riddleBoard');
 var originalRiddleBoard = $("#riddleBoard").clone();
 
 
-
+//start game logic
 function startRiddle(){
   setTimeout (function(){
     $('#riddle').show()
   }, 1000);
 }
 
+
+//reset board for player 2 turns
 function resetRiddleBoard(){
     $("#riddleBoard").replaceWith(originalRiddleBoard.clone());
     currentPlayer = player2;
+
   }
 
-
-
+//button logic
 riddleStartButton.click(startRiddle);
 
 riddleResetButton.click(resetRiddleBoard);
 
+//variables for score
 var p1RiddleScore = 0;
 var p2RiddleScore = 0;
 
-
-function riddleFunc (){
+//prompts for riddle answers and updating score
+function riddleFunc(){
   var txt;
   var riddleAnswer = prompt("Your answer, please...");
     if (riddleAnswer.toLowerCase() == "fire"){
@@ -310,6 +337,7 @@ function riddleFunc (){
     console.log("check working func");
 }
 
+//check for winner and link to SUDDEN DEATH ROUND in event of tie
 function winnerOrTie(){
   if (p1RiddleScore && p2RiddleScore && player1.score > player2.score){
         alert("Player 1 you are the winning muggle! with a score of" + " " + player1.score + "\n Player 2, you lose with a score of" + " " + player2.score);
@@ -318,31 +346,7 @@ function winnerOrTie(){
       } else if (p1RiddleScore && p2RiddleScore  && player1.score == player2.score){
         var sD = confirm("You meddlesome muggles tied the game! Well, I thought ahead... \n time for the SUDDEN DEATH challenge! Click 'ok' to begin.");
         if (sD) {
-          window.location.href = "suddenDeath.html";
+          setTimeout(function(){window.location.href = "suddenDeath.html"}, 1500);
         }
       }
     }
-
-
-
-// set up turn for each player
-// score 1 pt if win
-// is lose (click two bad potions) subtract 2 pts
-// log score for each
-//
-// timer for alternate score??( if both players get the answer)
-//
-// add event listener to each potion bottle
-// answer potion= prompt win
-// add score
-// stop timer
-//
-// non winner
-// prompt lose
-// subtract 2 points
-// stop timer
-
-///end of game
-// winner prompt
-//
-// most points = winning player
