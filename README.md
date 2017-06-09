@@ -4,7 +4,7 @@
 
 ## A fun game for all muggles!  
 
-#### Play Muggle Mischief
+#### Play [Muggle Mischief](https://mandajoan.github.io/mandajoan.muggle-mischief.io/)
 ### Game Overview:
 
 >This game includes 3 challenges, and a Sudden Death round in the event of a tie. Though prior knowledge of the Harry Potter narrative is not necessary to play, this game is oriented toward fans of the series.
