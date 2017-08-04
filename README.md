@@ -5,7 +5,7 @@
 ## A fun game for all muggles!  
 
 #### Play [Muggle Mischief](https://mandajoan.github.io/mandajoan.muggle-mischief.io/)
-### Game Overview:
+ ###  Game Overview:
 
 >This game includes 3 challenges, and a Sudden Death round in the event of a tie. Though prior knowledge of the Harry Potter narrative is not necessary to play, this game is oriented toward fans of the series.
 >> The first Challenge, "Find the Golden Snitch", requires each player to use the computer mouse to scan the Quidditch field for the hiding snitch. The player able to locate the snitch, via moving their mouse over its hidden location, in the shortest amount of time is the winner of the challenge.
@@ -16,7 +16,7 @@
 >>
 >> For the SUDDEN DEATH CHALLENGE, the players face off against each other once again. The winner of this challenge must click their answer box first and submit the correct answer to the provided question in the prompt. The players must act fast as the first to click their box, and yes, there may be some elbows thrown in this challenge. If the player who answers first is incorrect the other player gets the opportunity to answer. If that player answers incorrectly, the game ends in a tie.
 
-### Development & Technologies
+ ### Development & Technologies
 > This game uses HTML, CSS, JavaScript, and jQuery.
 
 ####User Stories
@@ -28,7 +28,7 @@
 >-I hope the game is engaging and includes a degree of difficulty so it is actually challenging and fun to play against someone.
 
 
-####MVP
+ ####MVP
 
 >-Each challenge works and flows to the next without issues in the logic.
 
@@ -39,7 +39,7 @@
 >-The game includes visual elements that engage and communicate with the players.
 
 
-####Dream Features
+ ####Dream Features
 
 >-Have the riddle in challenge 3 alternate with each new game.
 
@@ -47,7 +47,7 @@
 
 >-More game animations.
 
-#### Sources Used
+ #### Sources Used
 
 >Game logos created with [Font Meme](http://fontmeme.com/harry-potter-font/)
 
